@@ -1,22 +1,21 @@
----
+﻿---
 name: ui-ux-pro-max
-description: Use when building high-end, professional UI systems. Injects structured design rules, layouts, and UX patterns into the generation process.
+description: Advanced UI/UX intelligence encompassing styles, color palettes, font pairings, and graphic components.
 ---
 
 # UI/UX Pro Max
 
-## Overview
-This skill acts as a design intelligence database, ensuring the generated UI follows industry-leading standards for aesthetics, accessibility, and user experience.
+## Accessibility & Usability (a11y)
+1. **Contrast Ratio**: Ensure all text has at least a 4.5:1 contrast ratio with its background. Use WCAG standards.
+2. **Focus States**: Never remove outline without providing a distinct :focus-visible custom style. Keyboard navigation must be obvious.
+3. **Tap Targets**: Interactive elements must be at least 44x44px for touch screens.
 
-## Layout Patterns
-- **Bento Grid**: Use for dashboards to pack information cleanly into asymmetric grid areas.
-- **Minimalist**: High whitespace, large typography, monochromatic with a single accent color.
-- **Glassmorphism**: Subtle translucent backgrounds with backdrop-blur, used sparingly for floating elements or modals.
+## Color & Hierarchy
+1. **Semantic Colors**: Warning/Error/Success colors must be distinct and not rely on color alone (use icons + color).
+2. **Visual Hierarchy**: The most important element on the screen must be the most visually prominent. Use size, weight, and color to guide the user's eye naturally.
+3. **Dark Mode Ready**: Always design with a dark mode variant in mind. Use CSS variables or Tailwind's dark: classes from the start.
 
-## UX Guidelines
-1. **Interactive Feedback**: All clickable elements must have clear :hover, :active, and :focus states.
-2. **Empty States**: Never show a blank screen. Always provide a beautifully designed empty state with a clear call-to-action.
-3. **Progressive Disclosure**: Hide secondary information until requested (e.g., inside accordions or modals) to reduce cognitive load.
-
-## Implementation Standard
-Always use semantic HTML, accessible ARIA attributes, and ensure mobile-first responsive design.
+## Components
+- **Buttons**: Should have active feedback (scale down slightly on click).
+- **Forms**: Labels must be clear. Inputs should have generous padding. Error states must be informative.
+- **Empty States**: Empty tables or lists must feature a beautifully illustrated or styled message explaining what goes here and how to add it.
