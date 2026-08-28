@@ -10,22 +10,24 @@ export default function OrderList({ orders }: { orders: any[] }) {
     <ul className="flex flex-col gap-4">
       {orders.map(order => {
         const daysLeft = differenceInDays(new Date(order.dueDate), new Date());
-        let alertColor = "border-gray-200 bg-white text-gray-700";
-        if (daysLeft < 3) alertColor = "border-red-500 bg-red-50 text-red-900";
-        else if (daysLeft <= 7) alertColor = "border-orange-400 bg-orange-50 text-orange-900";
+        let alertColor = "border-[#D4C3B3] bg-white text-[#3E3A35]";
+        if (daysLeft < 3) alertColor = "border-red-400 bg-[#FFF9F9] text-red-900";
+        else if (daysLeft <= 7) alertColor = "border-[#E5B25D] bg-[#FFFCF5] text-[#8B6528]";
 
         return (
-          <li key={order.id} className={`p-4 border-l-4 rounded-md shadow-sm flex items-center justify-between ${alertColor}`}>
+          <li key={order.id} className={`p-5 border-l-[6px] rounded-xl shadow-sm flex items-center justify-between border-y border-r border-y-[#E5E0D8] border-r-[#E5E0D8] transition-all hover:shadow-md ${alertColor}`}>
             <div>
-              <p className="font-medium">{order.description}</p>
-              <p className="text-sm opacity-80">
+              <p className="font-medium text-lg mb-1">{order.description}</p>
+              <p className="text-sm opacity-80 font-light">
                 Scadenza: {format(new Date(order.dueDate), 'dd MMM yyyy', { locale: it })} 
-                ({daysLeft < 0 ? 'Scaduto' : `${daysLeft} giorni rimanenti`})
+                <span className="ml-2 px-2 py-0.5 rounded-full bg-[#FAF9F6] border border-[#E5E0D8] text-xs">
+                  {daysLeft < 0 ? 'Scaduto' : `${daysLeft} giorni rimanenti`}
+                </span>
               </p>
             </div>
             <button 
               onClick={() => completeOrder(order.id)}
-              className="ml-4 p-2 bg-white border border-gray-300 rounded hover:bg-gray-100 flex-shrink-0"
+              className="ml-4 px-4 py-2 bg-white text-[#3E3A35] border border-[#E5E0D8] rounded-lg hover:bg-[#FAF9F6] hover:border-[#D4C3B3] active:scale-95 transition-all flex-shrink-0 shadow-sm font-medium"
             >
               Completato ✓
             </button>

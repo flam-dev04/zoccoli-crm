@@ -23,10 +23,10 @@ export default function SalesChart({ orders }: { orders: any[] }) {
     <div className="h-64 w-full">
       <ResponsiveContainer width="100%" height="100%">
         <AreaChart data={data}>
-          <XAxis dataKey="date" stroke="#888888" fontSize={12} tickLine={false} axisLine={false} />
-          <YAxis stroke="#888888" fontSize={12} tickLine={false} axisLine={false} />
-          <Tooltip />
-          <Area type="monotone" dataKey="count" stroke="#0F172A" fill="#E2E8F0" strokeWidth={2} />
+          <XAxis dataKey="date" stroke="#A89F91" fontSize={12} tickLine={false} axisLine={false} />
+          <YAxis stroke="#A89F91" fontSize={12} tickLine={false} axisLine={false} />
+          <Tooltip contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 20px 40px rgba(0,0,0,0.05)' }} />
+          <Area type="monotone" dataKey="count" stroke="#8B7355" fill="#FAF9F6" strokeWidth={3} />
         </AreaChart>
       </ResponsiveContainer>
     </div>
