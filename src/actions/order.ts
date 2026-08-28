@@ -17,3 +17,8 @@ export async function completeOrder(id: string) {
   await prisma.order.update({ where: { id }, data: { completed: true } });
   revalidatePath('/');
 }
+
+export async function deleteOrder(id: string) {
+  await prisma.order.delete({ where: { id } });
+  revalidatePath('/');
+}

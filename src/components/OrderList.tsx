@@ -1,5 +1,5 @@
 'use client'
-import { completeOrder } from '@/actions/order';
+import { completeOrder, deleteOrder } from '@/actions/order';
 import { format, differenceInDays } from 'date-fns';
 import { it } from 'date-fns/locale';
 
@@ -25,12 +25,23 @@ export default function OrderList({ orders }: { orders: any[] }) {
                 </span>
               </p>
             </div>
-            <button 
-              onClick={() => completeOrder(order.id)}
-              className="ml-4 px-4 py-2 bg-white text-[#3E3A35] border border-[#E5E0D8] rounded-lg hover:bg-[#FAF9F6] hover:border-[#D4C3B3] active:scale-95 transition-all flex-shrink-0 shadow-sm font-medium"
-            >
-              Completato ✓
-            </button>
+            <div className="flex gap-2 ml-4 flex-shrink-0">
+              <button 
+                onClick={() => completeOrder(order.id)}
+                className="px-4 py-2 bg-[#FAF9F6] text-[#8B7355] border border-[#E5E0D8] rounded-lg hover:bg-white hover:border-[#D4C3B3] active:scale-95 transition-all shadow-sm font-medium text-sm"
+              >
+                Segna Completato
+              </button>
+              <button 
+                onClick={() => {
+                  if (confirm("Vuoi davvero eliminare questo ordine?")) deleteOrder(order.id);
+                }}
+                className="px-3 py-2 bg-white text-red-500 border border-[#E5E0D8] rounded-lg hover:bg-red-50 hover:border-red-200 active:scale-95 transition-all shadow-sm font-medium text-sm"
+                title="Elimina"
+              >
+                ✕
+              </button>
+            </div>
           </li>
         );
       })}

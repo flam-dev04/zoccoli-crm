@@ -40,11 +40,11 @@ export default async function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-white p-8 rounded-3xl shadow-[0_20px_40px_rgba(0,0,0,0.02)] border border-[#E5E0D8]">
               <h3 className="text-[#8B7355] text-sm uppercase tracking-wider mb-2">Ordini in Corso</h3>
-              <p className="text-4xl font-playfair font-medium">{pendingOrders}</p>
+              <p className="text-4xl font-playfair font-medium text-[#3E3A35]">{pendingOrders}</p>
             </div>
             <div className="bg-white p-8 rounded-3xl shadow-[0_20px_40px_rgba(0,0,0,0.02)] border border-[#E5E0D8]">
               <h3 className="text-[#8B7355] text-sm uppercase tracking-wider mb-2">Ordini Completati</h3>
-              <p className="text-4xl font-playfair font-medium">{completedOrders}</p>
+              <p className="text-4xl font-playfair font-medium text-[#C5A059] drop-shadow-sm">{completedOrders}</p>
             </div>
           </div>
           
