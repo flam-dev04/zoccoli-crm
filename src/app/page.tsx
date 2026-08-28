@@ -15,9 +15,20 @@ export default async function Home() {
   return (
     <main className="p-8 lg:p-12 max-w-[1400px] mx-auto w-full">
       {/* Header */}
-      <header className="mb-12">
-        <h1 className="font-playfair text-5xl font-medium tracking-tight mb-2">Lo Zoccolaio</h1>
-        <p className="text-[#8B7355] text-lg font-light tracking-wide">Gestione Artigianale Ordini</p>
+      <header className="mb-14 flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <div>
+          <h1 className="font-playfair text-6xl md:text-7xl font-medium tracking-tight mb-4 text-[#3E3A35] drop-shadow-sm">
+            Lo Zoccolaio
+          </h1>
+          <div className="flex items-center gap-4">
+            <span className="bg-white text-[#8B7355] border border-[#E5E0D8] px-5 py-2 rounded-full text-sm font-medium tracking-[0.15em] uppercase shadow-sm">
+              Fatti a mano e su misura
+            </span>
+            <span className="text-[#A89F91] text-sm font-light tracking-wide hidden sm:inline-block">
+              | Gestione Artigianale Ordini
+            </span>
+          </div>
+        </div>
       </header>
 
       {/* Bento Grid */}
@@ -53,10 +64,9 @@ export default async function Home() {
         {/* Right Column (Form & Image) */}
         <div className="lg:col-span-4 flex flex-col gap-6">
           {/* Image Placeholder Card */}
-          <div className="bg-white rounded-3xl shadow-[0_20px_40px_rgba(0,0,0,0.02)] border border-[#E5E0D8] overflow-hidden relative h-[250px] group">
-            {/* The image component is ready to receive the image source from the user */}
-            <div className="absolute inset-0 bg-[#E5E0D8] flex items-center justify-center transition-transform duration-700 group-hover:scale-105">
-               <Image src="/zoccoli-hero.jpg" alt="Lo Zoccolaio - Artigianato" fill className="object-cover opacity-90" /> 
+          <div className="bg-white rounded-3xl shadow-[0_20px_40px_rgba(0,0,0,0.02)] border border-[#E5E0D8] overflow-hidden relative h-[380px] group">
+            <div className="absolute inset-0 bg-[#E5E0D8] transition-transform duration-700 group-hover:scale-105">
+               <Image src="/zoccoli-real.jpg" alt="Lo Zoccolaio - Artigianato" fill className="object-cover" priority /> 
             </div>
           </div>
 
