@@ -15,9 +15,20 @@ export default async function Home() {
   return (
     <main className="p-8 lg:p-12 max-w-[1400px] mx-auto w-full">
       {/* Header */}
-      <header className="mb-12">
-        <h1 className="font-playfair text-5xl font-medium tracking-tight mb-2">Lo Zoccolaio</h1>
-        <p className="text-[#8B7355] text-lg font-light tracking-wide">Gestione Artigianale Ordini</p>
+      <header className="mb-14 flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <div>
+          <h1 className="font-playfair text-6xl md:text-7xl font-medium tracking-tight mb-4 text-[#3E3A35] drop-shadow-sm">
+            Lo Zoccolaio
+          </h1>
+          <div className="flex items-center gap-4">
+            <span className="bg-white text-[#8B7355] border border-[#E5E0D8] px-5 py-2 rounded-full text-sm font-medium tracking-[0.15em] uppercase shadow-sm">
+              Fatti a mano e su misura
+            </span>
+            <span className="text-[#A89F91] text-sm font-light tracking-wide hidden sm:inline-block">
+              | Gestione Artigianale Ordini
+            </span>
+          </div>
+        </div>
       </header>
 
       {/* Bento Grid */}
