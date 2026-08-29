@@ -3,6 +3,7 @@ import OrderForm from "@/components/OrderForm";
 import OrderList from "@/components/OrderList";
 import SalesChart from "@/components/SalesChart";
 import Image from "next/image";
+import { UserButton } from "@clerk/nextjs";
 
 export const dynamic = "force-dynamic";
 
@@ -17,17 +18,20 @@ export default async function Home() {
       {/* Header */}
       <header className="mb-14 flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div>
-          <h1 className="font-playfair text-6xl md:text-7xl font-medium tracking-tight mb-4 text-[#3E3A35] drop-shadow-sm">
+          <h1 className="font-playfair text-6xl md:text-7xl font-medium tracking-tight mb-4 text-[#3E3A35] drop-shadow-md">
             Lo Zoccolaio
           </h1>
           <div className="flex items-center gap-4">
-            <span className="bg-white text-[#8B7355] border border-[#E5E0D8] px-5 py-2 rounded-full text-sm font-medium tracking-[0.15em] uppercase shadow-sm">
+            <span className="bg-white text-[#8B7355] border border-[#E5E0D8] px-5 py-2 rounded-full text-sm font-semibold tracking-[0.15em] uppercase shadow-md">
               Fatti a mano e su misura
             </span>
-            <span className="text-[#A89F91] text-sm font-light tracking-wide hidden sm:inline-block">
+            <span className="text-[#8B7355] text-sm font-medium tracking-wide hidden sm:inline-block drop-shadow-sm">
               | Gestione Artigianale Ordini
             </span>
           </div>
+        </div>
+        <div className="flex items-center">
+          <UserButton appearance={{ elements: { userButtonAvatarBox: "w-12 h-12 shadow-md border-2 border-[#E5E0D8]" } }} />
         </div>
       </header>
 
