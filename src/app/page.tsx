@@ -42,25 +42,33 @@ export default async function Home() {
         <div className="lg:col-span-8 flex flex-col gap-6">
           {/* Top Stats Row */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-white p-8 rounded-3xl shadow-[0_20px_40px_rgba(0,0,0,0.02)] border border-[#E5E0D8]">
-              <h3 className="text-[#8B7355] text-sm uppercase tracking-wider mb-2">Ordini in Corso</h3>
-              <p className="text-4xl font-playfair font-medium text-[#3E3A35]">{pendingOrders}</p>
+            <div className="bg-white p-8 rounded-3xl shadow-[0_20px_40px_rgba(0,0,0,0.04)] border border-[#E5E0D8]">
+              <h3 className="font-playfair text-2xl sm:text-3xl font-bold text-[#3E3A35] underline decoration-[#C5A059] decoration-4 underline-offset-8 mb-8 drop-shadow-sm">
+                Ordini in Corso
+              </h3>
+              <p className="text-6xl font-sans font-black text-[#3E3A35] tracking-tighter">{pendingOrders}</p>
             </div>
-            <div className="bg-white p-8 rounded-3xl shadow-[0_20px_40px_rgba(0,0,0,0.02)] border border-[#E5E0D8]">
-              <h3 className="text-[#8B7355] text-sm uppercase tracking-wider mb-2">Ordini Completati</h3>
-              <p className="text-4xl font-playfair font-medium text-[#C5A059] drop-shadow-sm">{completedOrders}</p>
+            <div className="bg-white p-8 rounded-3xl shadow-[0_20px_40px_rgba(0,0,0,0.04)] border border-[#E5E0D8]">
+              <h3 className="font-playfair text-2xl sm:text-3xl font-bold text-[#3E3A35] underline decoration-[#C5A059] decoration-4 underline-offset-8 mb-8 drop-shadow-sm">
+                Ordini Completati
+              </h3>
+              <p className="text-6xl font-sans font-black text-[#C5A059] tracking-tighter drop-shadow-md">{completedOrders}</p>
             </div>
           </div>
           
           {/* Chart */}
-          <div className="bg-white p-8 rounded-3xl shadow-[0_20px_40px_rgba(0,0,0,0.02)] border border-[#E5E0D8]">
-            <h2 className="font-playfair text-2xl font-medium mb-6">Andamento Vendite</h2>
+          <div className="bg-white p-8 rounded-3xl shadow-[0_20px_40px_rgba(0,0,0,0.04)] border border-[#E5E0D8]">
+            <h2 className="font-playfair text-3xl font-bold text-[#3E3A35] underline decoration-[#C5A059] decoration-4 underline-offset-8 mb-10 drop-shadow-sm">
+              Andamento Vendite
+            </h2>
             <SalesChart orders={orders as any} />
           </div>
 
           {/* List */}
-          <div className="bg-white p-8 rounded-3xl shadow-[0_20px_40px_rgba(0,0,0,0.02)] border border-[#E5E0D8]">
-            <h2 className="font-playfair text-2xl font-medium mb-6">Ordini Recenti</h2>
+          <div className="bg-white p-8 rounded-3xl shadow-[0_20px_40px_rgba(0,0,0,0.04)] border border-[#E5E0D8]">
+            <h2 className="font-playfair text-3xl font-bold text-[#3E3A35] underline decoration-[#C5A059] decoration-4 underline-offset-8 mb-10 drop-shadow-sm">
+              Ordini Recenti
+            </h2>
             <OrderList orders={orders.filter((o: any) => !o.completed)} />
           </div>
         </div>
@@ -68,15 +76,17 @@ export default async function Home() {
         {/* Right Column (Form & Image) */}
         <div className="lg:col-span-4 flex flex-col gap-6">
           {/* Image Placeholder Card */}
-          <div className="bg-white rounded-3xl shadow-[0_20px_40px_rgba(0,0,0,0.02)] border border-[#E5E0D8] overflow-hidden relative h-[380px] group">
+          <div className="bg-white rounded-3xl shadow-[0_20px_40px_rgba(0,0,0,0.04)] border border-[#E5E0D8] overflow-hidden relative h-[380px] group">
             <div className="absolute inset-0 bg-[#E5E0D8] transition-transform duration-700 group-hover:scale-105">
                <Image src="/zoccoli-real.jpg" alt="Lo Zoccolaio - Artigianato" fill className="object-cover" priority /> 
             </div>
           </div>
 
           {/* Order Form */}
-          <div className="bg-white p-8 rounded-3xl shadow-[0_20px_40px_rgba(0,0,0,0.02)] border border-[#E5E0D8] flex-1">
-            <h2 className="font-playfair text-2xl font-medium mb-6">Nuovo Ordine</h2>
+          <div className="bg-white p-8 rounded-3xl shadow-[0_20px_40px_rgba(0,0,0,0.04)] border border-[#E5E0D8] flex-1">
+            <h2 className="font-playfair text-3xl font-bold text-[#3E3A35] underline decoration-[#C5A059] decoration-4 underline-offset-8 mb-10 drop-shadow-sm">
+              Nuovo Ordine
+            </h2>
             <OrderForm />
           </div>
         </div>
